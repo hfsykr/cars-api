@@ -40,7 +40,7 @@ def get_prediction(input):
 @app.route('/predict', methods=['POST'])
 def predict():
     if request.method == 'POST':
-        file = request.files['file']
+        file = request.files['image']
         image_bytes = file.read()
         image = Image.open(io.BytesIO(image_bytes))
         image_tensor = get_transform(image)
